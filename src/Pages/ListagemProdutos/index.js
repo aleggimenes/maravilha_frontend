@@ -137,7 +137,9 @@ export default function ListagemProdutos() {
     return (
         <section section style={{ backgroundColor: 'white', borderRadius: '10px', padding: '40px', marginTop: '90px', paddingTop: '40px', boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.5)' }}>
             <h1 style={{ marginBottom: '20px' }}>Listagem de Produtos</h1>
-            <Button variant="contained" style={{ marginBottom: '20px', marginTop: '20px' }} onClick={handleOpenModal}>Novo Produto</Button>
+            {user.userType === 1 &&
+                <Button variant="contained" style={{ marginBottom: '20px', marginTop: '20px' }} onClick={handleOpenModal}>Novo Produto</Button>
+            }
             <ConfirmationModal
                 open={openDeleteConfirmationModal}
                 handleClose={handleCloseDeleteConfirmationModal}
@@ -175,9 +177,11 @@ export default function ListagemProdutos() {
                 </TableContainer>
             </div>
 
-            {produtos.length > maxRows && (
-                <Button onClick={() => setMaxRows(maxRows + 10)}>Mostrar mais</Button>
-            )}
+            {
+                produtos.length > maxRows && (
+                    <Button onClick={() => setMaxRows(maxRows + 10)}>Mostrar mais</Button>
+                )
+            }
 
             <Modal open={modalOpen} onClose={handleOpenModalClose} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ backgroundColor: 'white', width: '40%', padding: '20px', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center' }}>
@@ -246,6 +250,6 @@ export default function ListagemProdutos() {
                     </div>
                 </div>
             </Modal>
-        </section>
+        </section >
     )
 }
