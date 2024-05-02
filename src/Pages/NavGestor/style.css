@@ -1,0 +1,35 @@
+.nav-container {
+  display: flex;
+  height: 100vh; /* Definir altura total da viewport */
+}
+
+.nav-sidebar {
+  background-color: #263544;
+
+  width: 290px; /* largura do sidebar */
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 33px;
+}
+.button-nav {
+  background-color: #263544;
+  border: none;
+  color: #9EA8B6;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  width: 90%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #4a85bf;
+}
